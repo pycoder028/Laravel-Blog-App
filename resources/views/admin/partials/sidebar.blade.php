@@ -1,10 +1,15 @@
+@php
+    $id = Auth::user()->id;
+    $profileData = App\Models\User::find($id);
+@endphp
+
 <nav id="sidebar">
     <!-- Sidebar Header-->
     <div class="sidebar-header d-flex align-items-center">
-      <div class="avatar"><img src="admin/img/avatar-6.jpg" alt="..." class="img-fluid rounded-circle"></div>
+      <div class="avatar"><img src="https://avatars.githubusercontent.com/u/127476745?v=4" alt="..." class="img-fluid rounded-circle"></div>
       <div class="title">
-        <h1 class="h5">Mark Stephen</h1>
-        <p>Web Designer</p>
+        <h1 class="h5">{{ $profileData->name }}</h1>
+        <p>Sr. Manager</p>
       </div>
     </div>
     <!-- Sidebar Navidation Menus--><span class="heading">Main</span>

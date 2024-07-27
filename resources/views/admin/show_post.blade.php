@@ -45,6 +45,7 @@
                   <th style="color: white">UserType</th>
                   <th style="color: white">Image</th>
                   <th style="color: white">Delete</th>
+                  <th style="color: white">Edit</th>
                 </tr>
               </thead>
               <tbody>
@@ -60,6 +61,7 @@
                         <img class="img_deg" src="postimage/{{ $post->image }}" alt="">
                     </td>
                     <td><a href="{{ url('delete_post',$post->id) }}" class="btn btn-sm btn-danger" onclick="confirmation(event)">Delete</a></td>
+                    <td><a href="{{ url('edit_post',$post->id) }}" class="btn btn-sm btn-success">Edit</a></td>
                   </tr>
                 @endforeach
 
