@@ -31,6 +31,13 @@ class HomeController extends Controller
 
         return view('home.master',compact('post'));
     }   // end method here
+
+    public function post_details($id){
+
+        $post = Post::findOrFail($id);
+
+        return view('home.post_details',compact('post'));
+    }   // end method here
     
 
 

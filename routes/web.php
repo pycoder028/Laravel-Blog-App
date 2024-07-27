@@ -17,6 +17,7 @@ use App\Http\Controllers\HomeController;
 */
 
 Route::get('/',[HomeController::class,'homepage']);
+Route::get('/post_details/{id}',[HomeController::class,'post_details']);
 
 /* Route::get('/dashboard', function () {
     return view('dashboard');
