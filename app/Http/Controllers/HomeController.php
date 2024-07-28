@@ -38,6 +38,40 @@ class HomeController extends Controller
 
         return view('home.post_details',compact('post'));
     }   // end method here
+
+    public function create_post(){
+
+        return view('home.create_post');
+    }   // end method here
+
+    public function user_post(Request $request){
+
+        $user = Auth()->user();
+        $userid = $user->id;
+        $name = $user->name;
+        $usertype = $user->usertype;
+
+        $post = new Post;
+        $post->title = $request->title;
+        $post->description = $request->description;
+
+        $post->post_status = 'pending';
+        $post->user_id = $userid;
+        $post->name = $name;
+        $post->usertype = $usertype;
+
+        $image = $request->image;
+        if($image){
+            $imagename = time().'.'.$image->getClientOriginalExtension();
+            $request->image->move('postimage',$imagename);
+            $post->image = $imagename;
+        }
+
+        $post->save();
+
+        return redirect()->back()->with('message', 'Post Added Successfully');
+
+    }   // end method here
     
 
 

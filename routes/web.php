@@ -18,6 +18,8 @@ use App\Http\Controllers\HomeController;
 
 Route::get('/',[HomeController::class,'homepage']);
 Route::get('/post_details/{id}',[HomeController::class,'post_details']);
+Route::get('/create_post',[HomeController::class,'create_post'])->middleware('auth');
+Route::post('/user_post',[HomeController::class,'user_post'])->middleware('auth');
 
 /* Route::get('/dashboard', function () {
     return view('dashboard');

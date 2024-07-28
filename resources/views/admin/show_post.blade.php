@@ -32,7 +32,7 @@
             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
             {{ session()->get('message') }}
         </div>
-    @endif
+        @endif
         <h1 class="title_deg">All Post</h1>
         <div class="container table-responsive"> 
             <table class="table table-striped">
