@@ -23,18 +23,14 @@
         </style>
    </head>
    <body>
+    @include('sweetalert::alert')
       <!-- header section start -->
       <div class="header_section">
         @include('home.header')
          <!-- banner section start -->
 
       <div>
-        @if(session()->has('message'))
-        <div class="alert alert-success">
-            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
-            {{ session()->get('message') }}
-        </div>
-        @endif
+
         <h2 class="post_title">Add Post</h2>
         <form action="{{ url('user_post') }}" method="POST" enctype="multipart/form-data">
             @csrf
