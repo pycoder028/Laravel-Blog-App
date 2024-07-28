@@ -8,7 +8,7 @@
              <div class="col-md-4 mb-5">
                 <div><img style="margin-bottom: 10px;" src="/postimage/{{ $post->image }}" class="services_img"></div>
                 <h4>{{ $post->title }}</h4>
-                <p>Posted by <b>{{ $post->name }}</b></p>
+                <p>Posted by <b style="color: red;">{{ $post->name }}</b></p>
                 <div class="btn_main"><a href="{{ url('post_details',$post->id) }}">Read More</a></div>
              </div>
             @endforeach
